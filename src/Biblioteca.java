@@ -9,28 +9,44 @@ public class Biblioteca {
 
 
     public void adicionarLivrosExemplo() {
+
+        Autor autor1 = new Autor();
+        autor1.id = 1;
+        autor1.nome = "Miriam";
+        autor1.dataNascimento = LocalDate.of(1969,12,21);
+
         Livro livro1 = new Livro();
         livro1.id = 1;
         livro1.titulo = "Congregação";
-        livro1.autor = "Miriam";
+        livro1.autor = autor1;
         livro1.disponivel = true;
         livro1.dataCadastro = LocalDate.of(2022,11,5);
         livro1.dataAtualizacao = LocalDate.of(2024,10,1);
         this.livros.add(livro1);
 
+        Autor autor2 = new Autor();
+        autor2.id = 2;
+        autor2.nome = "Robson";
+        autor2.dataNascimento = LocalDate.of(1966,12,22);
+
         Livro livro2 = new Livro();
         livro2.id = 2;
         livro2.titulo = "Reunião";
-        livro2.autor = "Robson";
+        livro2.autor = autor2;
         livro2.disponivel = true;
         livro2.dataCadastro = LocalDate.now();
         livro2.dataAtualizacao = LocalDate.now();
         this.livros.add(livro2);
 
+        Autor autor3 = new Autor();
+        autor3.id = 3;
+        autor3.nome = "Rosa";
+        autor3.dataNascimento = LocalDate.of(1950,5,4);
+
         Livro livro3 = new Livro();
         livro3.id = 3;
         livro3.titulo = "Campo";
-        livro3.autor = "Rosa";
+        livro3.autor = autor3;
         livro3.disponivel = true;
         livro3.dataCadastro = LocalDate.now();
         livro3.dataAtualizacao = LocalDate.now();
