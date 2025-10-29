@@ -14,6 +14,7 @@ public class Biblioteca {
         autor1.id = 1;
         autor1.nome = "Miriam";
         autor1.dataNascimento = LocalDate.of(1969,12,21);
+        this.autores.add(autor1);
 
         Livro livro1 = new Livro();
         livro1.id = 1;
@@ -28,6 +29,7 @@ public class Biblioteca {
         autor2.id = 2;
         autor2.nome = "Robson";
         autor2.dataNascimento = LocalDate.of(1966,12,22);
+        this.autores.add(autor2);
 
         Livro livro2 = new Livro();
         livro2.id = 2;
@@ -42,6 +44,7 @@ public class Biblioteca {
         autor3.id = 3;
         autor3.nome = "Rosa";
         autor3.dataNascimento = LocalDate.of(1950,5,4);
+        this.autores.add(autor3);
 
         Livro livro3 = new Livro();
         livro3.id = 3;
@@ -52,6 +55,5 @@ public class Biblioteca {
         livro3.dataAtualizacao = LocalDate.now();
         this.livros.add(livro3);
     }
-
 
 }
