@@ -4,7 +4,7 @@ public class Livro {
     Integer id;
     String titulo;
     Autor autor;
-    boolean disponivel;
+    Boolean disponivel;
     LocalDate dataCadastro;
     LocalDate dataAtualizacao;
 }
