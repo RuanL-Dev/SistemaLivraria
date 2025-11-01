@@ -11,22 +11,103 @@ public class SistemaEmprestimo {
 
         try (Scanner scanner = new Scanner(System.in)) {
             while (true) {
-                System.out.println("\nDeseja ver os livros? (s/n) - ou 0 para sair");
+                System.out.println("\nDeseja ver os livros? (s/n) ou 0 para sair");
                 String loopInteracao = scanner.nextLine().trim().toLowerCase();
 
-                if(loopInteracao.equals("0")) {
+                if (loopInteracao.equals("0")) {
                     System.out.println("Saindo...Até mais!");
                     break;
                 } else if (loopInteracao.startsWith("s") || loopInteracao.startsWith("y")) {
                     mostrarLivros(biblioteca);
-                    continue;
                 } else if (loopInteracao.startsWith("n")) {
                     System.out.println("OK! Quem sabe na próxima :)");
                     continue;
 
                 } else
                     System.out.println("Opção inválida. Digite s, n ou 0");
+
+                System.out.println("\n Deseja escolher algum livro? (s/n) - ou 0 para sair");
+                String loopEscolha = scanner.nextLine().trim().toLowerCase();
+
+                if (loopEscolha.equals("0")) {
+                    System.out.println("Saindo...Até mais!");
+                    break;
+                } else if (loopEscolha.startsWith("s") || loopEscolha.startsWith("y")) {
+                    mostrarLivrosID(biblioteca, scanner);
+                    continue;
+                } else if (loopEscolha.startsWith("n")) {
+                    System.out.println("OK! Quem sabe na próxima :)");
+                    continue;
+
+                } else
+                    System.out.println("Opção inválida. Digite s, n ou 0");
+
             }
+
+        }
+    }
+
+    private static void mostrarLivrosID(Biblioteca biblioteca, Scanner scanner) {
+        List<Livro> livrosID = biblioteca.getLivros();
+        if (livrosID.isEmpty()) {
+            System.out.println("Nenhum livro encontrado");
+            return;
+        }
+
+        while (true) {
+            System.out.println("Digite o ID do livro que deseja escolher ou 0 para sair: ");
+            String entrada = scanner.nextLine().trim();
+            if (entrada.isEmpty()) {
+                System.out.println("Digite o ID do livro que deseja escolher ou 0 para sair: ");
+            } else if (entrada.equals("0")) {
+                System.out.println("Saindo...Até mais!");
+                break;
+            }
+
+            int id;
+            try {
+                id = Integer.parseInt(entrada);
+            } catch (NumberFormatException e) {
+                System.out.println("ID inválido. Digite um número inteiro.");
+                continue;
+            }
+
+            Livro escolhaUsuario = biblioteca.buscarLivroPorID(id);
+            if (escolhaUsuario == null) {
+                System.out.println("ID não encontrado. Tente novamente.");
+                continue;
+            }
+
+
+            boolean autorFalse = escolhaUsuario.disponivel.equals(false);
+            if (!autorFalse) {
+                System.out.printf("Você escolheu: [%d] %s - Autor: %s\n", escolhaUsuario.id, escolhaUsuario.titulo, escolhaUsuario.autor.nome);
+                registroEmprestimo(biblioteca, id, scanner);
+            } else
+                System.out.println("Esse livro não está disponível no momento.");
+
+        }
+    }
+
+    private static void registroEmprestimo(Biblioteca biblioteca, int id, Scanner scanner) {
+        System.out.println("Deseja o empréstimo desse livro? (s/n) ou 0 para sair");
+        String entradaRegistroEmprestimo = scanner.nextLine().trim().toLowerCase();
+
+        while (true) {
+            if (entradaRegistroEmprestimo.isEmpty()) {
+                System.out.println("Opção inválida. Digite s, n ou 0");
+            } else if (entradaRegistroEmprestimo.equals("n")) {
+                return;
+            } else if (entradaRegistroEmprestimo.equals("0")) {
+                System.out.println("Saindo...Até mais!");
+                break;
+            }
+
+            Livro livroEscolhido = biblioteca.buscarLivroPorID(id);
+            System.out.println("Digite seu nome para registro do empréstimo: ");
+            String entradaNomeUsuario = scanner.nextLine().trim();
+            System.out.printf("%s %s%s%s\n", "Muito obrigado por escolher o livro", livroEscolhido.titulo, " - Sr(a).", entradaNomeUsuario);
+
 
         }
     }
