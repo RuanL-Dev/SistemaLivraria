@@ -61,11 +61,8 @@ public class Biblioteca {
         return Collections.unmodifiableList(livros);
     }
 
-    public Livro buscarLivroPorID (int id) {
-        for (Livro l : livros) {
-            if(l.id == id) return l;
-        }
-        return null;
+    public Livro buscarLivroPorID(int id) {
+        return livros.stream().filter(l -> l.id == id).findFirst().orElse(null);
     }
 
 }
