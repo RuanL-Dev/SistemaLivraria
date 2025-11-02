@@ -21,7 +21,7 @@ public class Biblioteca {
         livro1.id = 1;
         livro1.titulo = "Congregação";
         livro1.autor = autor1;
-        livro1.disponivel = false;
+        livro1.disponivel = true;
         livro1.dataCadastro = LocalDate.of(2022, 11, 5);
         livro1.dataAtualizacao = LocalDate.of(2024, 10, 1);
         this.livros.add(livro1);
@@ -65,4 +65,26 @@ public class Biblioteca {
         return livros.stream().filter(l -> l.id == id).findFirst().orElse(null);
     }
 
+    public boolean registrarEmprestimo(int livroId, String nomeCliente, LocalDate dataEmprestimo) {
+        Livro livroEscolhidoEmprestimo = buscarLivroPorID(livroId);
+        if (livroEscolhidoEmprestimo == null) {
+            System.out.println("Livro não encontrado.");
+            return false;
+        } else if (!livroEscolhidoEmprestimo.disponivel) {
+            System.out.println("Livro já está emprestado.");
+            return false;
+        }
+        livroEscolhidoEmprestimo.disponivel = false;
+        livroEscolhidoEmprestimo.dataAtualizacao = dataEmprestimo;
+
+        Emprestimo emprestimo = new Emprestimo();
+        emprestimo.id = (this.emprestimos.size() + 1);
+        emprestimo.livro = livroEscolhidoEmprestimo;
+        emprestimo.nomeCliente = nomeCliente;
+        emprestimo.dataEmprestimo = dataEmprestimo;
+        emprestimo.dataDevolucao = null;
+        emprestimos.add(emprestimo);
+
+        return true;
+    }
 }
