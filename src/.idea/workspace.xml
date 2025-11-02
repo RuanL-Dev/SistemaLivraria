@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316442d6-2f0a-4193-9e0c-4b352b40a3d6" name="Changes" comment="feat: cria uma função lambda (função anônima)">
+    <list default="true" id="316442d6-2f0a-4193-9e0c-4b352b40a3d6" name="Changes" comment="feat: cria método para mostrar Livros e resgitro de emprestimo.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/Biblioteca.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/Livro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEmprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEmprestimo.java" afterDir="false" />
     </list>
@@ -17,7 +19,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -36,11 +38,18 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feat/escolha-id",
+    "git-widget-placeholder": "feat/mostrarLivros-Emprestimo",
     "ignore.virus.scanning.warn.message": "true"
   }
 }]]></component>
   <component name="RunManager">
+    <configuration name="SistemaEmprestimo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SistemaEmprestimo" />
+      <module name="SistemaLivraria" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="src" />
       <method v="2">
@@ -52,6 +61,11 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SistemaEmprestimo" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -77,23 +91,21 @@
       <option name="project" value="LOCAL" />
       <updated>1762013761345</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: cria método para mostrar Livros e resgitro de emprestimo.">
+      <option name="closed" value="true" />
+      <created>1762035617120</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762035617120</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: cria método para buscar livro por ID" />
     <MESSAGE value="feat: cria uma função lambda (função anônima)" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: cria uma função lambda (função anônima)" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/SistemaEmprestimo.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="feat: cria método para mostrar Livros e resgitro de emprestimo." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: cria método para mostrar Livros e resgitro de emprestimo." />
   </component>
 </project>
