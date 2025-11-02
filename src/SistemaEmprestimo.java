@@ -1,5 +1,3 @@
-import jdk.jshell.Snippet;
-
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Locale;
@@ -79,13 +77,13 @@ public class SistemaEmprestimo {
             }
 
 
-            boolean autor = escolhaUsuario.disponivel;
-            if (autor) {
+            boolean disponivel = escolhaUsuario.disponivel;
+            if (disponivel) {
                 System.out.printf("Você escolheu: [%d] %s - Autor: %s\n", escolhaUsuario.id, escolhaUsuario.titulo, escolhaUsuario.autor.nome);
                 registroEmprestimo(biblioteca, id, scanner);
             } else
                 System.out.println("Esse livro não está disponível no momento.");
-            break;
+            return;
 
         }
 
@@ -97,7 +95,7 @@ public class SistemaEmprestimo {
 
             if (entradaRegistroEmprestimo.isEmpty()) {
                 System.out.println("Opção inválida. Digite s, n ou 0");
-            } else if (entradaRegistroEmprestimo.equals("n")) {
+            } else if (entradaRegistroEmprestimo.equalsIgnoreCase("n")) {
                 return;
             } else if (entradaRegistroEmprestimo.equals("0")) {
                 System.out.println("Saindo...Até mais!");
